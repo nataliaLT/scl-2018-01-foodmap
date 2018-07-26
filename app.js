@@ -1,6 +1,6 @@
 //Funcion para llamar a la api
 let buscar=document.getElementById("busqueda").value;//variable que guardara el numero de tarjeta ingresado
-fetch(`https://places.cit.api.here.com/places/v1/discover/explore?app_id=6J5AsaSXzYCfklN0kKPj&app_code=Yj-7Y7Mbb5WaxdLavZGk2Q&at=-33.6020882,-70.5807397,17&pretty`)//llamamos a la api
+fetch(`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?`)//llamamos a la api
 .then(response => response.json())
 .then(data=>{
     console.log(data)})
