@@ -15,10 +15,16 @@ h4{
 }
 #busqueda{
     margin-top: 2%;
-    margin-left: 17%;
-    background-color: 
+    margin-left: 20%;
+    text-align: center;
+    
 }
 .btn{
     margin-top: 2%;
-    margin-left: 35%;
+   
+    text-align: center;
+}
+.map{
+    margin-top: 10%;
+    margin-bottom: 10%;
 }

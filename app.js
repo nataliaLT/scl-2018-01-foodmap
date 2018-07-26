@@ -4,42 +4,25 @@ fetch(`https://places.cit.api.here.com/places/v1/discover/explore?app_id=6J5AsaS
 .then(response => response.json())
 .then(data=>{
     console.log(data)})
-var platform = new H.service.Platform({
-        'app_id': '{6J5AsaSXzYCfklN0kKP} ',
-        'app_code': '{Yj-7Y7Mbb5WaxdLavZGk2Q} '
-      });    
 
-    // Obtain the default map types from the platform object:
-var defaultLayers = platform.createDefaultLayers();
+let divMapa =  document.getElementById("mapa");
+navigator.geolocation.getCurrentPosition(fn_ok, fn_mal);
+function fn_mal(){}
+function fn_ok(rta){
+    let lat= rta.coords.latitude;
+    let lon= rta.coords.longitude;
 
-// Instantiate (and display) a map object:
-var map = new H.Map(
-  document.getElementById('map'),
-  defaultLayers.normal.map,
-  {
-    zoom: 10,
-    center: { lat: 52.5, lng: 13.4 }
-  });
-
-
-
-/*function findMe(){
-    let output = document.getElementById('map');
-    if(navigator.geolocation){
-        output.innerHTML = "<p>Tu navegador soporta Geolocalizacion<p>";
-    }else{
-        output.innerHTML = "<p>Tu navegador no soporta Geolocalizacion<p>";
+    let gLatLon = new google.maps.LatLng(lat,lon);
+    let objConfig = {
+        zoom: 17,
+        center: gLatLon
     }
-    //obtenemos latitud y longitud
-    function localizacion(posicion){
-        var latitude = posicion.coords.latitude;
-        var longitude = posicion.coords.longitude;
-
-        output.innerHTML = "<p>Latitud: "+latitude+"<br>Longitud: "+longitude+"</p>";
+    let gMapa =  new google.maps.Map(divMapa, objConfig);
+    let objConfigMarker={
+        position: gLatLon,
+        map:gMapa,
+        title: "usted esta aca"
     }
-    function error(){
-        output.innerHTML = "<p>No se pudo obtener tu ubicacion</p>";
-    }
-    navigator.geolocation.getCurrentPosition(localizacion,error);
+    let gMarker =  new google.maps.Marker(objConfigMarker);
 }
-*/
+
