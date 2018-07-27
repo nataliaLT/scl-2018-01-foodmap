@@ -26,20 +26,20 @@ function fn_ok(rta){
     let gMarker =  new google.maps.Marker(objConfigMarker);
 }*/
 
-var map;
-var infowindow;
+let map;
+let infowindow;
 
 function initMap(){
     //mapa con coordenadas actuales
     navigator.geolocation.getCurrentPosition(function(pos){
         lat=pos.coords.latitude;
         lon=pos.coords.longitude;
-        var myLatIng = new google.maps.LatLng(lat, lon);
+        let myLatIng = new google.maps.LatLng(lat, lon);
 
-        var mapOptions = {
+        let mapOptions = {
             center: myLatIng,
-            zoom: 14
-           // mapTypeId: google.maps.mapTypeId.SATELITE
+            zoom: 14,
+           mapTypeId: google.maps.MapTypeId.SATELITE
         };
         map= new google.maps.Map(document.getElementById("mapa"), mapOptions);
 
@@ -47,13 +47,13 @@ function initMap(){
         infowindow = new google.maps.InfoWindow();
 
         //especificamos la localizacion, el radio y el tipo de lugares que queremos obtener
-        var request = {
-            location:myLatIng,
+        let request = {
+            location: myLatIng,
             radius: 5000,
-            types: ['restaurant']
+            types: ['restaurante']
         };
         //creamos el servicio placeService y enviamos la peticion
-        var service = new google.maps.places.PlacesService(map);
+        let service = new google.maps.places.PlacesService(map);
         service.nearbySearch(request, function(results, status){
             if(status === google.maps.places.PlacesServiceStatus.OK){
                 for(var i=0; i<results.length; i++){
@@ -65,7 +65,7 @@ function initMap(){
 }
 function crearMarcador(place){
     //creamos un marcador
-    var marker= new google.maps.Market({
+    let marker= new google.maps.Marker({
         map: map,
         position: place.geometry.location
     });
