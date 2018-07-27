@@ -21,7 +21,7 @@
                     <h1>FoodMap</h1>
                   </div>
         <!--Carrusel-->
-        <section class="container">
+        <div class="container">
                 <div class="row">
                   <div class="col-12 col-md-12">
                       <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
@@ -47,34 +47,27 @@
                         </div>
                   </div>
                   </div>
-        </section>
+                </div>
        
         <!--seccion donde va el input-->
         <div class="container">
                 <div class="row">
-                  <div class="col-12">
+                  <div class="col-12 col-md-12">
                     <h4>Comida cerca de ti</h4>
                     <input id="busqueda" class="busqueda" type="text" placeholder="Buscar restaurant">
                     <button type="button" class="btn btn-danger" onclick="initMap()">Buscar</button>
                   </div>
+                </div>
+        </div>
         <!--seccion donde va el mapa-->
-        <section>
-                <div class="container">
+        <section class="container">
                         <div class="row">
-                          <div class="col-12">
+                          <div class="col-12 col-md-6">
                             <div  id = "mapa" class = "map" style= "width: 500px; height: 350px;"></div>
                           </div>
+                          </div>
         </section>
-        <section class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="vacio" style="width: 100%; height: 10%"></div>
-            </div>
-          </div>
-          
-        </section>
-
-        <!--seccion de fotografias-->
+   
     
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

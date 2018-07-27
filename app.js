@@ -50,8 +50,11 @@ function initMap(){
         let request = {
             location: myLatIng,
             radius: 5000,
-            types: ['restaurante']
+            fields:['rating', 'opening_hours'],
+            types: ['restaurant']
+            
         };
+        console.log(request.fields);
         //creamos el servicio placeService y enviamos la peticion
         let service = new google.maps.places.PlacesService(map);
         service.nearbySearch(request, function(results, status){
@@ -75,5 +78,18 @@ function crearMarcador(place){
         infowindow.open(map, this);
     });
 }
+/*function addStopOverMarker(map) {
+    var stopOver = new google.maps.places.Autocomplete(document.getElementById('stopOver'));
+    google.maps.event.addListener(stopOver, 'place_changed', function() {
+      let coord = stopOver.getPlace().geometry.location;
+      console.log(coord);
+      var marker = new google.maps.Marker({
+        position: coord,
+        map: map,
+        draggable: true,
+        visible: true
+      });
+    });
+  }*/
 
 

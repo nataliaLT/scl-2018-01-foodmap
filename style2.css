@@ -7,7 +7,7 @@ h1{
     color:#ED3602;
     margin-top: 7%;
     margin-bottom: 5%;
-    font-size: 7em;
+    
 }
 h4{
     font-family: 'Francois One', sans-serif;
@@ -17,15 +17,16 @@ h4{
 }
 #busqueda{
     margin-top: 2%;
-    margin-left: 20%;
-    text-align: center;
+    margin-left: 40%;
+   
     
 }
 .btn{
     margin-top: 2%;
-    text-align: center;
+   
 }
 .map{
     margin-top: 10%;
     margin-bottom: 10%;
+    margin-left: 50%;
 }
