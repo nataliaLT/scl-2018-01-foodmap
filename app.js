@@ -1,6 +1,6 @@
-//Funcion para llamar a la api
+/*//Funcion para llamar a la api
 let buscar=document.getElementById("busqueda").value;//variable que guardara el numero de tarjeta ingresado
-fetch(`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?`)//llamamos a la api
+fetch(`https://places.cit.api.here.com/places/v1/discover/explore?app_id=6J5AsaSXzYCfklN0kKPj&app_code=Yj-7Y7Mbb5WaxdLavZGk2Q&at=-33.6020882,-70.5807397,17&pretty`)//llamamos a la api
 .then(response => response.json())
 .then(data=>{
     console.log(data)})
@@ -32,8 +32,8 @@ var infowindow;
 function initMap(){
     //mapa con coordenadas actuales
     navigator.geolocation.getCurrentPosition(function(pos){
-        lat=-33.5603288;
-        lon= -70.6182004,13;
+        lat=pos.coords.latitude;
+        lon=pos.coords.longitude;
         var myLatIng = new google.maps.LatLng(lat, lon);
 
         var mapOptions = {
@@ -50,7 +50,7 @@ function initMap(){
         var request = {
             location:myLatIng,
             radius: 5000,
-            types: ['restaurante']
+            types: ['restaurant']
         };
         //creamos el servicio placeService y enviamos la peticion
         var service = new google.maps.places.PlacesService(map);
